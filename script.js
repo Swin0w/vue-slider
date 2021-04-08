@@ -3,14 +3,17 @@ function initVue() {
     new Vue({
       el: "#app",
       data: {
+        // Array di immagini
         imgs: [
           "img/img1.jpg",
           "img/img2.jpg",
           "img/img3.jpg",
           "img/img4.jpg"
         ],
+        // indicizzazione
         activeIndex: 0
       },
+      // Slider
       methods: {
         prevImg: function(){
           this.activeIndex--;
@@ -25,6 +28,7 @@ function initVue() {
           }
         }
       },
+      // Immagine successiva in 3 secondi
       mounted: function() {
         setInterval(() => {
         this.nextImg();
