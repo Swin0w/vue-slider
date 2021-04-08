@@ -2,6 +2,7 @@
 <html lang="it" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- CDN Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -17,11 +18,13 @@
           <i class="fas fa-angle-left"></i>
         </div>
         <div class="images">
+          <!-- :src="imgs[activeIndex] richiama l'array in data imgs"-->
           <img :src="imgs[activeIndex]" alt="">
         </div>
         <div class="next" @click="nextImg">
           <i class="fas fa-angle-right"></i>
         </div>
+        <!-- Aggiunta di pallini che seguono l'indicizzazione dell'Immagine -->
         <div class="nav">
           <i :class="(ind - 1 == activeIndex) ? 'active' : ''"
           class="fas fa-circle"
@@ -31,3 +34,4 @@
     </div>
   </body>
 </html>
+<!-- Per richiamare in HTML qualcosa in Vue.js si usa :attributohtml per richiamare un evento @ -->
