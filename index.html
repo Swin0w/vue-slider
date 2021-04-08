@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+    <title>Slider in Vue</title>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div class="slider-wrapper">
+        <div class="prev" @click="prevImg">
+          <i class="fas fa-angle-left"></i>
+        </div>
+        <div class="images">
+          <img :src="imgs[activeIndex]" alt="">
+        </div>
+        <div class="next" @click="nextImg">
+          <i class="fas fa-angle-right"></i>
+        </div>
+        <div class="nav">
+          <i :class="(ind - 1 == activeIndex) ? 'active' : ''"
+          class="fas fa-circle"
+          v-for="ind in imgs.length"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
